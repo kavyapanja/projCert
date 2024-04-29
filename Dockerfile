@@ -1,16 +1,10 @@
-# Use the devopsedu/webapp image as the base
-FROM devopsedu/webapp
-
-# Install PHP and Apache on top of the base image
-RUN apt-get update \
-    && apt-get install -y \
-        php7.4 \
-        libapache2-mod-php7.4
+# Use the official PHP image with Apache
+FROM php:7.4-apache  # Use the correct base image with Apache installed
 
 # Copy your PHP website files into the Apache document root
 COPY . /var/www/html/
 
-# Optionally, set the working directory
+# Set the working directory (optional)
 WORKDIR /var/www/html/
 
 # Expose the HTTP port (default is 80)
