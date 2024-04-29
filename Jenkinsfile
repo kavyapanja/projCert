@@ -16,8 +16,8 @@ pipeline {
             steps {
                 sh '''
                 # Stop any running container with the same name
-                docker stop php-webapp || true
-                docker rm php-webapp || true
+                # docker stop php-webapp || true
+                # docker rm php-webapp || true
                 
                 # Run the new Docker container
                 docker run -d --name php-webapp -p 80:80 php-webapp
