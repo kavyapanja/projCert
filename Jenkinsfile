@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build Docker Container') {
             steps {
-                sh 'docker buildx -t php-webapp .' // Build the Docker image using the Dockerfile
+                sh 'docker build -t php-webapp .' // Build the Docker image using the Dockerfile
             }
         }
         stage('Deploy Docker Container') {
