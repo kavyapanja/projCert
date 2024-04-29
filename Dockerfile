@@ -1,5 +1,11 @@
-# Use the base image that includes Apache and PHP
+# Use the devopsedu/webapp image as the base
 FROM devopsedu/webapp
+
+# Install PHP and Apache on top of the base image
+RUN apt-get update \
+    && apt-get install -y \
+        php7.4 \
+        libapache2-mod-php7.4
 
 # Copy your PHP website files into the Apache document root
 COPY . /var/www/html/
