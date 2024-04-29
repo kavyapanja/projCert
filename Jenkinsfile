@@ -1,9 +1,10 @@
 pipeline {
-    agent { label 'SlaveNode' } // Adjust to your Jenkins slave label
+    agent { label 'test-server' } // Adjust to your Jenkins slave label
     stages {
         stage('Pull Code from Git') {
             steps {
-                git 'https://github.com/edureka-devops/projCert.git' // Adjust to your GitHub repository
+                // Specify the branch you want to pull from
+                git branch: 'patch-1', url: 'https://github.com/edureka-devops/projCert.git' // Change to the correct branch
             }
         }
         stage('Build Docker Container') {
