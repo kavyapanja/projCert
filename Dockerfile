@@ -1,14 +1,11 @@
-# Use the base image for PHP web applications
-FROM devopsedu/webapp
+# Use the official PHP image with Apache
+FROM php:7.4-apache
 
-# Copy your PHP website into the web server's document root
+# Copy your PHP application files to the Apache document root
 COPY . /var/www/html/
 
-# Optionally, set the working directory
-WORKDIR /var/www/html/
-
-# Expose the web server port
+# Expose the default HTTP port
 EXPOSE 80
 
-# Start the Apache web server when the container runs
+# Start Apache when the container is run
 CMD ["apache2-foreground"]
