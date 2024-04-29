@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'test-server' } // Adjust to your Jenkins slave label
+    agent { label 'SlaveNode' } // Adjust to your Jenkins slave label
     stages {
         stage('Pull Code from Git') {
             steps {
