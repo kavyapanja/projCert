@@ -1,9 +1,11 @@
-# Use the official PHP image with Apache
-FROM devopsedu/webapp
+# Use devopsedu/webapp as the base image
+FROM devopsedu/webapp:latest
 
-# Copy your PHP application files to the Apache document root
+# Copy the PHP website files into the container
 COPY . /var/www/html/
 
-# Expose the default HTTP port
-EXPOSE 80
+# Set permissions if needed
+RUN chown -R www-data:www-data /var/www/html
 
+# Expose port 80 (optional, depending on the base image)
+EXPOSE 80
