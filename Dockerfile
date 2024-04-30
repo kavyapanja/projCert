@@ -1,5 +1,5 @@
 # Use the official PHP image with Apache
-FROM php:7.4-apache
+FROM devopsedu/webapp
 
 # Copy your PHP application files to the Apache document root
 COPY . /var/www/html/
