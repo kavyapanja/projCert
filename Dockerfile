@@ -7,5 +7,3 @@ COPY . /var/www/html/
 # Expose the default HTTP port
 EXPOSE 80
 
-# Start Apache when the container is run
-CMD ["apache2-foreground"]
