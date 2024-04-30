@@ -20,7 +20,7 @@ pipeline {
                 docker rm php-webapp || true
                 
                 # Run the new Docker container
-                docker run -d --name php-webapp -p 80:80 php-webapp
+                docker run -d --name php-webapp -p 8000:80 php-webapp
                 '''
             }
         }
