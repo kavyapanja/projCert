@@ -1,11 +1,13 @@
-# Use devopsedu/webapp as the base image
-FROM devopsedu/webapp:latest
+FROM php:7.4-apache  # Base image with Apache and PHP
 
-# Copy the PHP website files into the container
+# Copy website files to the document root
 COPY . /var/www/html/
 
-# Set permissions if needed
-RUN chown -R www-data:www-data /var/www/html
+# Set the working directory
+WORKDIR /var/www/html/
 
-# Expose port 80 (optional, depending on the base image)
+# Expose the HTTP port
 EXPOSE 80
+
+# Start Apache in the foreground
+CMD ["apache2-foreground"]
