@@ -1,5 +1,4 @@
-FROM php:7.4-apache  # Base image with Apache and PHP
-
+FROM php:7.4-apache 
 # Copy website files to the document root
 COPY . /var/www/html/
 
